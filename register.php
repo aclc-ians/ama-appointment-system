@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <form action="register.php" method="POST">
             <div class="input-container">
                 <i class="fas fa-id-card"></i>
-                <input type="text" name="student_id" placeholder="Student ID (e.g. 24001321100)" required>
+                <input type="text" name="student_id" placeholder="Student ID (e.g. 24100321100)" required>
             </div>
             <div class="input-row">
                 <div class="input-container">
