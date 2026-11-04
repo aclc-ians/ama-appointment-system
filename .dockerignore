@@ -1,0 +1,5 @@
+.git
+.env
+.env.*
+login.sql
+register.sql
