@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $redirect_url = 'homepage.php';
                     }
 
-                    echo popup_response_script('Login successful!', 'success', $redirect_url);
+                    header('Location: ' . $redirect_url, true, 303);
                     exit();
                 } else {
                     echo popup_response_script('Invalid student number or password.', 'error', 'login.php');
