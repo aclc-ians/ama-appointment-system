@@ -43,7 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     } else {
                         mysqli_stmt_bind_param($insert_stmt, 'ssssss', $student_id, $first_name, $last_name, $email, $norm_phone, $hashed_password);
                         if (mysqli_stmt_execute($insert_stmt)) {
-                            echo popup_response_script('Account created successfully. You can now log in.', 'success', 'login.php');
+                            $_SESSION['user_id'] = $student_id;
+                            $_SESSION['user_name'] = $first_name . ' ' . $last_name;
+                            $_SESSION['user_email'] = $email;
+                            $_SESSION['user_role'] = 'student';
+                            $_SESSION['education_level'] = null;
+
+                            echo popup_response_script('Account created successfully. Welcome to the student portal.', 'success', 'homepage.php');
                             exit();
                         }
                         echo popup_response_script('Database Error: ' . mysqli_error($con));
