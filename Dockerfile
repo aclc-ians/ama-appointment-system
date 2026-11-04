@@ -1,6 +1,10 @@
 FROM php:8.2-apache
 
-RUN docker-php-ext-install mysqli
+RUN for module in mpm_event mpm_worker; do \
+      if [ -e "/etc/apache2/mods-enabled/${module}.load" ]; then a2dismod "$module"; fi; \
+    done \
+    && a2enmod mpm_prefork \
+    && docker-php-ext-install mysqli
 
 COPY . /var/www/html/
 
