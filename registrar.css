@@ -359,6 +359,11 @@ body {
     overflow-wrap: anywhere;
 }
 
+.sched-notice > div {
+    flex: 1;
+    min-width: 0;
+}
+
 .booking form {
     gap: .75rem;
     padding: 1rem;

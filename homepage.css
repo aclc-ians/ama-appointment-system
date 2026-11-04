@@ -964,6 +964,15 @@ body[data-theme="dark"] .rejection-reason-label {
         padding: 0.65rem 0.7rem;
         font-size: 0.9rem;
     }
+
+    .appointments tbody td[colspan] {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        overflow-wrap: normal;
+        word-break: normal;
+        text-align: center;
+    }
 }
 
 /* ==========================================================================

@@ -142,7 +142,7 @@ if (empty($services)) {
     </div>
     <div class="sched-notice">
       <i class="fas fa-circle-info" aria-hidden="true"></i>
-      <strong>Registrar Schedule Control:</strong> Select your preferred day and time. The Registrar will review, assign, or adjust your official slot. Check your student portal for appointment updates.
+      <div><strong>Registrar Schedule Control:</strong> Select your preferred day and time. The Registrar will review, assign, or adjust your official slot. Check your student portal for appointment updates.</div>
     </div>
     <form method="post" action="book_appointment.php" id="bookingForm">
       <input type="hidden" name="educational_level" value="<?php echo htmlspecialchars($education_level, ENT_QUOTES, 'UTF-8'); ?>">
