@@ -69,9 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - ACLC Appointment System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="register.css?v=1.1">
+    <link rel="stylesheet" href="register.css?v=<?php echo filemtime(__DIR__ . '/register.css'); ?>">
+    <link rel="stylesheet" href="password-toggle.css?v=<?php echo filemtime(__DIR__ . '/password-toggle.css'); ?>">
     <link rel="stylesheet" href="popup.css">
     <script src="popup.js"></script>
+    <script src="password-toggle.js?v=<?php echo filemtime(__DIR__ . '/password-toggle.js'); ?>" defer></script>
 </head>
 <body>
     <div class="register">
@@ -106,7 +108,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             <div class="input-container">
                 <i class="fas fa-lock"></i>
-                <input type="password" id="password" name="password" placeholder="Create a Password" required>
+                <input type="password" id="password" name="password" placeholder="Create a Password" autocomplete="new-password" data-password-toggle required>
+                <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false" aria-controls="password">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
             </div>
             <button type="submit">Create Account</button>
         </form>
