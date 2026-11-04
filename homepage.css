@@ -178,7 +178,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    background: linear-gradient(112deg, #102f4b 0%, #07516b 68%, #087c78 125%);
+    background: linear-gradient(112deg, #003366 0%, #0056b3 70%, #b42332 100%);
     color: #ffffff;
     max-width: 1200px;
     margin: 1.75rem auto 1.5rem;
@@ -220,11 +220,11 @@ body {
     display: flex;
     align-items: center;
     gap: 0.55rem;
-    color: #b9d8e7;
+    color: #ffd4d8;
 }
 
 .welcome-kicker i {
-    color: #f4a2a8;
+    color: #ff8995;
 }
 
 .welcome-sec h2 {
@@ -904,6 +904,10 @@ body[data-theme="dark"] .rejection-reason-label {
         padding: 0.7rem 0.85rem;
         border-bottom: 1px solid var(--border-color);
         overflow-wrap: anywhere;
+    }
+
+    .appointments tbody .appointment-row td {
+        width: 100%;
     }
 
     .appointments .appointment-row td > * {
