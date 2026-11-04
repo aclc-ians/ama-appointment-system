@@ -6,6 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student_id = trim($_POST['student_id'] ?? '');
     $password = $_POST['password'] ?? '';
 
+    if ($student_id !== '' && (!ctype_digit($student_id) || strlen($student_id) > 11)) {
+        echo popup_response_script('Student number must contain only digits and be no more than 11 digits.', 'error', 'login.php');
+        exit();
+    }
+
     if (!empty($student_id) && !empty($password)) {
         $stmt = mysqli_prepare($con, "SELECT student_id, first_name, last_name, email, password, role, education_level FROM users WHERE student_id = ?");
 
@@ -77,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="login.php" method="POST">
             <div class="input-container">
                 <i class="fas fa-id-card"></i>
-                <input type="text" name="student_id" placeholder="Enter your Student Number (USN)" value="<?php echo htmlspecialchars($student_id ?? '', ENT_QUOTES, 'UTF-8'); ?>" autocomplete="username" required>
+                <input type="text" name="student_id" placeholder="Enter your Student Number (USN)" value="<?php echo htmlspecialchars($student_id ?? '', ENT_QUOTES, 'UTF-8'); ?>" autocomplete="username" maxlength="11" inputmode="numeric" pattern="[0-9]{1,11}" title="Enter up to 11 digits" required>
             </div>
 
             <div class="input-container">

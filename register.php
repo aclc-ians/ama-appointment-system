@@ -12,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($student_id === '' || $first_name === '' || $last_name === '' || $email === '' || $password === '' || $phone === '') {
         echo popup_response_script('Please fill out all required fields including mobile number.');
+    } elseif (!ctype_digit($student_id) || strlen($student_id) > 11) {
+        echo popup_response_script('Student ID must contain only digits and be no more than 11 digits.');
     } else {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $norm_phone = $phone;
@@ -86,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <form action="register.php" method="POST">
             <div class="input-container">
                 <i class="fas fa-id-card"></i>
-                <input type="text" name="student_id" placeholder="Student ID (e.g. 24100321100)" required>
+                <input type="text" name="student_id" placeholder="Student ID (e.g. 24100321100)" maxlength="11" inputmode="numeric" pattern="[0-9]{1,11}" title="Enter up to 11 digits" required>
             </div>
             <div class="input-row">
                 <div class="input-container">
