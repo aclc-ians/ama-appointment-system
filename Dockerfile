@@ -1,9 +1,10 @@
 FROM php:8.2-apache
 
-RUN for module in mpm_event mpm_worker; do \
+RUN for module in mpm_event mpm_worker mpm_prefork; do \
       if [ -e "/etc/apache2/mods-enabled/${module}.load" ]; then a2dismod "$module"; fi; \
     done \
     && a2enmod mpm_prefork \
+    && apache2ctl -M \
     && docker-php-ext-install mysqli
 
 COPY . /var/www/html/
