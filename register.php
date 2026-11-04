@@ -113,6 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <i class="fas fa-eye" aria-hidden="true"></i>
                 </button>
             </div>
+            <p class="password-reminder"><i class="fas fa-circle-info" aria-hidden="true"></i> Password changes and self-service resets aren't available yet. Please remember your password.</p>
             <button type="submit">Create Account</button>
         </form>
 
