@@ -73,6 +73,7 @@ if (empty($services)) {
   <title>Registrar Office Appointment - ACLC</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="registrar.css?v=<?php echo filemtime(__DIR__ . '/registrar.css'); ?>">
+  <link rel="stylesheet" href="student-header.css?v=<?php echo filemtime(__DIR__ . '/student-header.css'); ?>">
   <link rel="stylesheet" href="popup.css?v=<?php echo filemtime(__DIR__ . '/popup.css'); ?>">
   <script src="popup.js?v=<?php echo filemtime(__DIR__ . '/popup.js'); ?>"></script>
 </head>

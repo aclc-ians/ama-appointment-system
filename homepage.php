@@ -40,6 +40,7 @@ $result = mysqli_query($con, "SELECT id, office, service, appointment_date, appo
     <title>School Appointment & Queuing - ACLC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="homepage.css?v=<?php echo filemtime(__DIR__ . '/homepage.css'); ?>">
+    <link rel="stylesheet" href="student-header.css?v=<?php echo filemtime(__DIR__ . '/student-header.css'); ?>">
     <link rel="stylesheet" href="popup.css?v=<?php echo filemtime(__DIR__ . '/popup.css'); ?>">
     <script src="popup.js?v=<?php echo filemtime(__DIR__ . '/popup.js'); ?>"></script>
 </head>
@@ -55,6 +56,7 @@ $result = mysqli_query($con, "SELECT id, office, service, appointment_date, appo
         </div>
 
         <div class="header-user-actions">
+            <a href="homepage.php" class="home-link"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
             <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                 <i class="fas fa-moon"></i>
             </button>
