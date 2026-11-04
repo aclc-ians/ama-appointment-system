@@ -47,9 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff & Admin Portal - ACLC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="admin-login.css?v=8">
+    <link rel="stylesheet" href="admin-login.css?v=<?php echo filemtime(__DIR__ . '/admin-login.css'); ?>">
+    <link rel="stylesheet" href="password-toggle.css?v=<?php echo filemtime(__DIR__ . '/password-toggle.css'); ?>">
     <link rel="stylesheet" href="popup.css">
     <script src="popup.js"></script>
+    <script src="password-toggle.js?v=<?php echo filemtime(__DIR__ . '/password-toggle.js'); ?>" defer></script>
 </head>
 <body>
     <div class="background-collage" aria-hidden="true">
@@ -78,7 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <div class="input-group">
                 <i class="fa fa-lock"></i>
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" id="adminLoginPassword" name="password" placeholder="Password" autocomplete="current-password" data-password-toggle required>
+                <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false" aria-controls="adminLoginPassword">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
             </div>
 
             <button type="submit">Sign In to Dashboard</button>
